@@ -5,8 +5,16 @@ export const Login = (): JSX.Element => {
   const { data: session } = useSession();
 
   if (session) {
-    return <Button onClick={() => signOut()}>Logout</Button>;
+    return (
+      <Button colorScheme="orange" onClick={() => signOut()}>
+        Logout
+      </Button>
+    );
   }
 
-  return <Button onClick={() => signIn()}>Sign in</Button>;
+  return (
+    <Button colorScheme="orange" onClick={() => signIn()}>
+      Mit Strava anmelden!
+    </Button>
+  );
 };
