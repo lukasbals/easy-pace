@@ -1,15 +1,17 @@
-"use client";
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "./index.module.css";
 import { Box, Button, Center, Heading, Text } from "boemly";
 import { useState } from "react";
+import Login from "@/components/Login";
+import Athletes from "@/components/Athletes";
+import Club from "@/components/Club";
 
 export default function Home() {
-  const [isFranziShown, setIsFranziShown] = useState(false);
+  const [isWelcomeShown, setIsWelcomeShown] = useState(false);
 
   return (
     <main className={styles.main}>
-      <Center height="xl" flexDir="column" gap="4" padding="4">
+      <Center flexDir="column" gap="4" paddingX="4" paddingTop="10">
         <Heading size="4xl">Easy Pace</Heading>
         <Text size="mdRegularNormal">
           Radeln macht gemeinsam am meisten Spasssssss
@@ -19,18 +21,21 @@ export default function Home() {
           size="xl"
           colorScheme="pink"
           onClick={() => {
-            setIsFranziShown(true);
+            setIsWelcomeShown(true);
 
             setTimeout(() => {
-              setIsFranziShown(false);
+              setIsWelcomeShown(false);
             }, 1500);
           }}
         >
           Say hello
         </Button>
+        <Login />
+        <Athletes />
+        <Club />
       </Center>
       <Box
-        display={isFranziShown ? "unset" : "none"}
+        display={isWelcomeShown ? "unset" : "none"}
         position="absolute"
         top="0"
         left="0"

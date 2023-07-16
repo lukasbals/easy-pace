@@ -6,7 +6,7 @@ body {
 
 body {
   background: var(--boemly-colors-purple-200) !important;
-  cursor:url("/eli.png"), auto !important;
+  cursor:url("/eli.png") 25 37, auto !important;
 }
 
 a {
