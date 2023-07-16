@@ -1,4 +1,3 @@
-import useClub from "@/hooks/useClub";
 import Image from "next/image";
 
 export const Logo = (): JSX.Element => {

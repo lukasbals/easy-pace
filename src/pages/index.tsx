@@ -1,13 +1,11 @@
-import Image from "next/image";
-import { Box, Button, Flex, Heading, Spacer, Text, Wrapper } from "boemly";
-import { useState } from "react";
+import { Flex, Heading, Spacer, Text, Wrapper } from "boemly";
 import Login from "@/components/Login";
 import Athletes from "@/components/Athletes";
 import Club from "@/components/Club";
 import { useSession } from "next-auth/react";
+import SayHello from "@/components/SayHello";
 
 export default function Home() {
-  const [isWelcomeShown, setIsWelcomeShown] = useState(false);
   const { data: session } = useSession();
 
   return (
@@ -31,19 +29,7 @@ export default function Home() {
           <Flex alignItems="flex-start" gap="4">
             <Login />
 
-            <Button
-              size="xl"
-              colorScheme="pink"
-              onClick={() => {
-                setIsWelcomeShown(true);
-
-                setTimeout(() => {
-                  setIsWelcomeShown(false);
-                }, 1500);
-              }}
-            >
-              Sag Hallo!
-            </Button>
+            <SayHello />
           </Flex>
         </Flex>
 
@@ -51,23 +37,6 @@ export default function Home() {
 
         {!!session ? <Club /> : <></>}
       </Wrapper>
-      <Box
-        display={isWelcomeShown ? "unset" : "none"}
-        position="absolute"
-        top="0"
-        left="0"
-        width="100vw"
-        height="100vh"
-      >
-        <Box position="relative" width="full" height="full">
-          <Image
-            src="/welcome-from-franzi.webp"
-            alt="Franzi weloming our guests"
-            fill
-            style={{ objectFit: "contain" }}
-          />
-        </Box>
-      </Box>
     </>
   );
 }
