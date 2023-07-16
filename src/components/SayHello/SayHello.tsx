@@ -67,7 +67,7 @@ export const SayHello = (): JSX.Element => {
         <Box position="relative" width="full" height="full">
           <Image
             src="/welcome-from-franzi.webp"
-            alt="Franzi weloming our guests"
+            alt="Franzi welcoming our guests"
             fill
             style={{ objectFit: "contain", objectPosition: "center" }}
           />

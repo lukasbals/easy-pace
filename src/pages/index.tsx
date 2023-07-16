@@ -7,6 +7,7 @@ import SayHello from "@/components/SayHello";
 import WeatherForecast from "@/components/WeatherForecast";
 import JoinLink from "@/components/JoinLink";
 import Head from "next/head";
+import Leave from "@/components/Leave";
 
 export default function Home() {
   const { data: session } = useSession();
@@ -57,6 +58,10 @@ export default function Home() {
         <Spacer height="12" />
 
         <WeatherForecast />
+
+        <Spacer height="12" />
+
+        <Leave />
 
         <Spacer height="12" />
       </Wrapper>
