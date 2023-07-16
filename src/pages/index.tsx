@@ -5,6 +5,7 @@ import Club from "@/components/Club";
 import { useSession } from "next-auth/react";
 import SayHello from "@/components/SayHello";
 import WeatherForecast from "@/components/WeatherForecast";
+import JoinLink from "@/components/JoinLink";
 
 export default function Home() {
   const { data: session } = useSession();
@@ -13,7 +14,12 @@ export default function Home() {
     <>
       <Wrapper>
         <Spacer height="8" />
-        <Flex justifyContent="space-between" alignItems="flex-start">
+        <Flex
+          flexDir={["column", null, null, "row"]}
+          justifyContent="space-between"
+          alignItems="flex-start"
+          gap="8"
+        >
           {!!session ? (
             <Athletes />
           ) : (
@@ -27,7 +33,13 @@ export default function Home() {
             </Flex>
           )}
 
-          <Flex alignItems="flex-start" gap="4">
+          <Flex
+            flexDir={["column", null, null, "row"]}
+            alignItems="flex-start"
+            gap="4"
+          >
+            <JoinLink />
+
             <Login />
 
             <SayHello />
