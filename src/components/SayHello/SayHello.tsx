@@ -1,4 +1,4 @@
-import { Box, Button } from "boemly";
+import { Box, Button, Flex, Text } from "boemly";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 
@@ -27,21 +27,28 @@ export const SayHello = (): JSX.Element => {
 
   return (
     <>
-      <Button
-        size="xl"
-        colorScheme="pink"
-        onClick={() => {
-          incrementCount();
-          setCount(count + 1);
-          setIsWelcomeShown(true);
+      <Flex flexDir="column" gap="2">
+        <Button
+          size="xl"
+          colorScheme="pink"
+          onClick={() => {
+            incrementCount();
+            setCount(count + 1);
+            setIsWelcomeShown(true);
 
-          setTimeout(() => {
-            setIsWelcomeShown(false);
-          }, 1500);
-        }}
-      >
-        Sag Hallo! {count}
-      </Button>
+            setTimeout(() => {
+              setIsWelcomeShown(false);
+            }, 1500);
+          }}
+        >
+          Sag Hallo!
+        </Button>
+        <Text size="smRegularNormal" textAlign="center">
+          <b>{count}</b> Easyrider haben
+          <br />
+          schon &quot;Hallo&quot; gesagt
+        </Text>
+      </Flex>
       <Box
         display={isWelcomeShown ? "unset" : "none"}
         position="absolute"
@@ -49,6 +56,7 @@ export const SayHello = (): JSX.Element => {
         left="0"
         width="full"
         height="calc(100vh - var(--header-height))"
+        zIndex="banner"
       >
         <Box position="relative" width="full" height="full">
           <Image
