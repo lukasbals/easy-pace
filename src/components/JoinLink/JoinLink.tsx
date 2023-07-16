@@ -1,10 +1,7 @@
 import { Button } from "boemly";
-import { useSession } from "next-auth/react";
 import Link from "next/link";
 
 export const JoinLink = (): JSX.Element => {
-  const { data: session } = useSession();
-
   return (
     <Link href="https://www.strava.com/clubs/easypace" target="_blank">
       <Button colorScheme="gray" color="#fc5200">

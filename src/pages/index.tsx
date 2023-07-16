@@ -5,11 +5,8 @@ import Club from "@/components/Club";
 import { useSession } from "next-auth/react";
 import SayHello from "@/components/SayHello";
 import WeatherForecast from "@/components/WeatherForecast";
-<<<<<<< Updated upstream
 import JoinLink from "@/components/JoinLink";
-=======
 import Head from "next/head";
->>>>>>> Stashed changes
 
 export default function Home() {
   const { data: session } = useSession();
