@@ -6,8 +6,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   if (count) {
     res.status(200).json({ count });
+  } else {
+    res.status(200).json({ count: 0 });
   }
-  res.status(200).json({ count: 0 });
 };
 
 export default handler;

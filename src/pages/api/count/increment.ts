@@ -7,8 +7,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (count) {
     await kv.set("sayHelloCount", count + 1);
     res.status(200).end();
+  } else {
+    res.end();
   }
-  res.end();
 };
 
 export default handler;
