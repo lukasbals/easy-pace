@@ -17,7 +17,7 @@ export const Club = (): JSX.Element => {
 
     fetchData();
   }, [session]);
-  console.log(club);
+
   if (club) {
     return (
       <Box maxW="xl">
