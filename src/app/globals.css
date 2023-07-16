@@ -4,6 +4,10 @@ body {
   overflow-x: hidden;
 }
 
+body {
+  cursor:url("/eli.png"), auto !important;
+}
+
 a {
   color: inherit;
   text-decoration: none;
