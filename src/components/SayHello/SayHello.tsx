@@ -25,15 +25,15 @@ export const SayHello = (): JSX.Element => {
         position="absolute"
         top="0"
         left="0"
-        width="100vw"
-        height="100vh"
+        width="full"
+        height="calc(100vh - var(--header-height))"
       >
         <Box position="relative" width="full" height="full">
           <Image
             src="/welcome-from-franzi.webp"
             alt="Franzi weloming our guests"
             fill
-            style={{ objectFit: "contain" }}
+            style={{ objectFit: "contain", objectPosition: "center" }}
           />
         </Box>
       </Box>
