@@ -15,10 +15,8 @@ export const Club = (): JSX.Element => {
               label="Mitglieder"
               number={club.member_count.toString()}
             />
-            <LabelNumberPair
-              label="Followers"
-              number={club.following_count.toString()}
-            />
+
+            <LabelNumberPair label="Liebe" number="viel" />
           </Flex>
         </Flex>
         <Spacer height="6" />
