@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Text } from "boemly";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import { css } from "@emotion/react";
 
 export const SayHello = (): JSX.Element => {
   const [isWelcomeShown, setIsWelcomeShown] = useState(false);
@@ -40,6 +41,11 @@ export const SayHello = (): JSX.Element => {
               setIsWelcomeShown(false);
             }, 1500);
           }}
+          css={css`
+            animation-name: say-hello-button-animation;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+          `}
         >
           Sag Hallo!
         </Button>

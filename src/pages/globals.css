@@ -13,3 +13,24 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+@keyframes say-hello-button-animation {
+  0% {
+    background: var(--boemly-colors-pink-500);
+    -webkit-box-shadow: 0 0 3px var(--boemly-colors-gray-500);
+  }
+  25% {
+    background: var(--boemly-colors-purple-500);
+  }
+  50% {
+    background: var(--boemly-colors-yellow-500);
+    -webkit-box-shadow: 0 0 15px var(--boemly-colors-gray-500);
+  }
+  75% {
+    background: var(--boemly-colors-green-500);
+  }
+  100% {
+    background: var(--boemly-colors-pink-500);
+    -webkit-box-shadow: 0 0 3px var(--boemly-colors-gray-500);
+  }
+}
