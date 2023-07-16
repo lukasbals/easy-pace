@@ -4,6 +4,7 @@ import Athletes from "@/components/Athletes";
 import Club from "@/components/Club";
 import { useSession } from "next-auth/react";
 import SayHello from "@/components/SayHello";
+import WeatherForecast from "@/components/WeatherForecast";
 
 export default function Home() {
   const { data: session } = useSession();
@@ -36,6 +37,12 @@ export default function Home() {
         <Spacer height="12" />
 
         {!!session ? <Club /> : <></>}
+
+        <Spacer height="12" />
+
+        <WeatherForecast />
+
+        <Spacer height="12" />
       </Wrapper>
     </>
   );

@@ -13,7 +13,7 @@ export const Club = (): JSX.Element => {
           <Flex gap="8">
             <LabelNumberPair
               label="Mitglieder"
-              number={club.member_count.toString()}
+              number={(club.member_count - 1).toString()}
             />
 
             <LabelNumberPair label="Liebe" number="viel" />
