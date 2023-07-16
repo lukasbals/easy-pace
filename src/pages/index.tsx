@@ -1,29 +1,32 @@
 import Image from "next/image";
-import styles from "./index.module.css";
-import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  Heading,
-  Spacer,
-  Text,
-  Wrapper,
-} from "boemly";
+import { Box, Button, Flex, Heading, Spacer, Text, Wrapper } from "boemly";
 import { useState } from "react";
 import Login from "@/components/Login";
 import Athletes from "@/components/Athletes";
 import Club from "@/components/Club";
+import { useSession } from "next-auth/react";
 
 export default function Home() {
   const [isWelcomeShown, setIsWelcomeShown] = useState(false);
+  const { data: session } = useSession();
 
   return (
     <>
       <Wrapper>
         <Spacer height="8" />
         <Flex justifyContent="space-between" alignItems="flex-start">
-          <Athletes />
+          {!!session ? (
+            <Athletes />
+          ) : (
+            <Flex flexDir="column">
+              <Heading>Willkommen bei Easypace!</Heading>
+              <Spacer height="2" minHeight="2" />
+              <Text>
+                Melde dich mit Strava an um das volle Potential von Easypace zu
+                nutzen! Wichtig ist, sag Hallo!
+              </Text>
+            </Flex>
+          )}
 
           <Flex alignItems="flex-start" gap="4">
             <Login />
@@ -39,14 +42,14 @@ export default function Home() {
                 }, 1500);
               }}
             >
-              Say hello
+              Sag Hallo!
             </Button>
           </Flex>
         </Flex>
 
         <Spacer height="12" />
 
-        <Club />
+        {!!session ? <Club /> : <></>}
       </Wrapper>
       <Box
         display={isWelcomeShown ? "unset" : "none"}
