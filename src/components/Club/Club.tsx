@@ -1,28 +1,15 @@
-import fetchClub from "@/integrations/strava/fetchClub";
-import Club from "@/models/Club";
+import useClub from "@/hooks/useClub";
 import { Box, Flex, Heading, LabelNumberPair, Spacer, Text } from "boemly";
-import { useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
 
 export const Club = (): JSX.Element => {
-  const { data: session } = useSession();
-  const [club, setClub] = useState<Club>();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      if (session) {
-        setClub(await fetchClub(session.accessToken));
-      }
-    };
-
-    fetchData();
-  }, [session]);
+  const club = useClub();
 
   if (club) {
     return (
       <Box maxW="xl">
         <Flex gap="8" alignItems="center" justifyContent="space-between">
           <Heading size="3xl">{club.name}</Heading>
+          <Spacer height="6" />
           <Flex gap="8">
             <LabelNumberPair
               label="Mitglieder"

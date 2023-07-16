@@ -1,6 +1,6 @@
 import fetchAthletes from "@/integrations/strava/fetchAthletes";
 import Athlete from "@/models/Athlete";
-import { BoemlyList, Box, Heading } from "boemly";
+import { BoemlyList, Box, Heading, Spacer } from "boemly";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 
@@ -21,6 +21,7 @@ export const Athletes = (): JSX.Element => {
   return (
     <Box>
       <Heading size="3xl">Our Heros</Heading>
+      <Spacer height="6" />
       <BoemlyList
         listItems={athletes.map((athlete) => ({
           id: athlete.firstname + athlete.lastname,

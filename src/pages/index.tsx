@@ -1,6 +1,15 @@
 import Image from "next/image";
 import styles from "./index.module.css";
-import { Box, Button, Center, Heading, Text } from "boemly";
+import {
+  Box,
+  Button,
+  Center,
+  Flex,
+  Heading,
+  Spacer,
+  Text,
+  Wrapper,
+} from "boemly";
 import { useState } from "react";
 import Login from "@/components/Login";
 import Athletes from "@/components/Athletes";
@@ -10,30 +19,35 @@ export default function Home() {
   const [isWelcomeShown, setIsWelcomeShown] = useState(false);
 
   return (
-    <main className={styles.main}>
-      <Center flexDir="column" gap="4" paddingX="4" paddingTop="10">
-        <Heading size="4xl">Easy Pace</Heading>
-        <Text size="mdRegularNormal">
-          Radeln macht gemeinsam am meisten Spasssssss
-        </Text>
+    <>
+      <Wrapper>
+        <Spacer height="8" />
+        <Flex justifyContent="space-between" alignItems="flex-start">
+          <Athletes />
 
-        <Button
-          size="xl"
-          colorScheme="pink"
-          onClick={() => {
-            setIsWelcomeShown(true);
+          <Flex alignItems="flex-start" gap="4">
+            <Login />
 
-            setTimeout(() => {
-              setIsWelcomeShown(false);
-            }, 1500);
-          }}
-        >
-          Say hello
-        </Button>
-        <Login />
-        <Athletes />
+            <Button
+              size="xl"
+              colorScheme="pink"
+              onClick={() => {
+                setIsWelcomeShown(true);
+
+                setTimeout(() => {
+                  setIsWelcomeShown(false);
+                }, 1500);
+              }}
+            >
+              Say hello
+            </Button>
+          </Flex>
+        </Flex>
+
+        <Spacer height="12" />
+
         <Club />
-      </Center>
+      </Wrapper>
       <Box
         display={isWelcomeShown ? "unset" : "none"}
         position="absolute"
@@ -51,6 +65,6 @@ export default function Home() {
           />
         </Box>
       </Box>
-    </main>
+    </>
   );
 }

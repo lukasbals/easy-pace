@@ -6,14 +6,19 @@ export const Login = (): JSX.Element => {
 
   if (session) {
     return (
-      <Button colorScheme="orange" onClick={() => signOut()}>
+      <Button colorScheme="gray" onClick={() => signOut()}>
         Logout
       </Button>
     );
   }
 
   return (
-    <Button colorScheme="orange" onClick={() => signIn()}>
+    <Button
+      colorScheme="orange"
+      backgroundColor="#fc5200"
+      color="white"
+      onClick={() => signIn()}
+    >
       Mit Strava anmelden!
     </Button>
   );
