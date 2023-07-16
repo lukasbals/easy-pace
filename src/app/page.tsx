@@ -9,13 +9,15 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <Center height="xl" flexDir="column" gap="4">
+      <Center height="xl" flexDir="column" gap="4" padding="4">
         <Heading size="4xl">Easy Pace</Heading>
         <Text size="mdRegularNormal">
           Radeln macht gemeinsam am meisten Spasssssss
         </Text>
 
         <Button
+          size="xl"
+          colorScheme="pink"
           onClick={() => {
             setIsFranziShown(true);
 

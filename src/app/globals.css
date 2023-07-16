@@ -5,6 +5,7 @@ body {
 }
 
 body {
+  background: var(--boemly-colors-purple-200) !important;
   cursor:url("/eli.png"), auto !important;
 }
 
