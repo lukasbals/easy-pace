@@ -1,9 +1,29 @@
 import { Box, Button } from "boemly";
 import Image from "next/image";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export const SayHello = (): JSX.Element => {
   const [isWelcomeShown, setIsWelcomeShown] = useState(false);
+  const [count, setCount] = useState(0);
+
+  const incrementCount = useCallback(async () => {
+    await fetch("/api/count/increment");
+  }, []);
+
+  useEffect(() => {
+    const loadCount = async () => {
+      const countResponse = await fetch("/api/count/get");
+      if (countResponse.status === 200) {
+        setCount((await countResponse.json()).count);
+      }
+    };
+
+    loadCount();
+
+    setInterval(() => {
+      loadCount();
+    }, 5000);
+  }, []);
 
   return (
     <>
@@ -11,6 +31,8 @@ export const SayHello = (): JSX.Element => {
         size="xl"
         colorScheme="pink"
         onClick={() => {
+          incrementCount();
+          setCount(count + 1);
           setIsWelcomeShown(true);
 
           setTimeout(() => {
@@ -18,7 +40,7 @@ export const SayHello = (): JSX.Element => {
           }, 1500);
         }}
       >
-        Sag Hallo!
+        Sag Hallo! {count}
       </Button>
       <Box
         display={isWelcomeShown ? "unset" : "none"}
