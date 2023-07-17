@@ -21,16 +21,14 @@ export const Athletes = (): JSX.Element => {
   return (
     <Box>
       <Heading size="3xl">Our Heros</Heading>
+      <Spacer height="6" />
       <Box overflowY="scroll" height="xs">
-        <Box>
-          <Spacer height="6" />
-          <BoemlyList
-            listItems={athletes.map((athlete) => ({
-              id: athlete.firstname + athlete.lastname,
-              text: athlete.firstname + " " + athlete.lastname,
-            }))}
-          />
-        </Box>
+        <BoemlyList
+          listItems={athletes.map((athlete) => ({
+            id: athlete.firstname + athlete.lastname,
+            text: athlete.firstname + " " + athlete.lastname,
+          }))}
+        />
       </Box>
     </Box>
   );

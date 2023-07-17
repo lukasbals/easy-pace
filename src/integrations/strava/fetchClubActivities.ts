@@ -1,8 +1,8 @@
 import ClubActivity from "@/models/ClubActivity";
 
-const fetchClubActivity = async (token: string): Promise<ClubActivity[]> => {
+const fetchClubActivities = async (token: string): Promise<ClubActivity[]> => {
   const clubActivityResponse = await fetch(
-    "https://www.strava.com/api/v3/clubs/{id}/activities?page=1&per_page=100",
+    "https://www.strava.com/api/v3/clubs/easypace/activities?page=1&per_page=30",
     {
       headers: {
         Authorization: "Bearer " + token,
@@ -17,4 +17,4 @@ const fetchClubActivity = async (token: string): Promise<ClubActivity[]> => {
   }
 };
 
-export default fetchClubActivity;
+export default fetchClubActivities;

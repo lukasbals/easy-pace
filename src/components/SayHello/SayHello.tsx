@@ -50,7 +50,12 @@ export const SayHello = (): JSX.Element => {
           Sag Hallo!
         </Button>
         <Text size="smRegularNormal" textAlign="center">
-          <b>{count}</b> Easyrider haben
+          <b>
+            {new Intl.NumberFormat("de", { maximumFractionDigits: 0 }).format(
+              count
+            )}
+          </b>{" "}
+          Easyrider haben
           <br />
           schon &quot;Hallo&quot; gesagt
         </Text>
