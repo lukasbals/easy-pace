@@ -5,8 +5,8 @@ export const authOptions = {
   // Configure one or more authentication providers
   providers: [
     StravaProvider({
-      clientId: "110661",
-      clientSecret: "f76a09809fe6ae5904f63f4401b232273d0e7aa1",
+      clientId: process.env.STRAVA_CLIENT_ID || "",
+      clientSecret: process.env.STRAVA_CLIENT_SECRET || "",
     }),
     // ...add more providers here
   ],
