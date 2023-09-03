@@ -20,8 +20,6 @@ export const Athletes = (): JSX.Element => {
 
   return (
     <Box>
-      <Heading size="3xl">Our Heros</Heading>
-      <Spacer height="6" />
       <Box overflowY="scroll" height="xs">
         <BoemlyList
           listItems={athletes.map((athlete) => ({

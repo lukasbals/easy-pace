@@ -62,11 +62,11 @@ export const SayHello = (): JSX.Element => {
       </Flex>
       <Box
         display={isWelcomeShown ? "unset" : "none"}
-        position="absolute"
+        position="fixed"
         top="0"
         left="0"
         width="full"
-        height="calc(100vh - var(--header-height))"
+        height="full"
         zIndex="banner"
       >
         <Box position="relative" width="full" height="full">

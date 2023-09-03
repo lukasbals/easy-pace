@@ -29,10 +29,10 @@ export const Leave = (): JSX.Element => {
       <Box
         display={isLeaveShown ? "unset" : "none"}
         position="fixed"
-        top="var(--header-height)"
+        top="0"
         left="0"
         width="full"
-        height="calc(100vh - var(--header-height))"
+        height="full"
         zIndex="banner"
       >
         <Box position="relative" width="full" height="full">

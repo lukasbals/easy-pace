@@ -1,14 +1,17 @@
 import type { AppProps } from "next/app";
 import {
   BoemlyThemeProvider,
+  Box,
+  Button,
   Flex,
-  Heading,
   Layout,
   PageContainer,
+  Wrapper,
 } from "boemly";
 import { SessionProvider } from "next-auth/react";
 import "./globals.css";
 import Logo from "@/components/Logo";
+import JoinLink from "@/components/JoinLink";
 
 export default function MyApp({
   Component,
@@ -19,16 +22,28 @@ export default function MyApp({
       <SessionProvider session={session}>
         <Layout
           header={
-            <Flex
-              alignItems="center"
-              height="full"
-              background="green.500"
-              justifyContent="center"
-              gap="4"
-            >
-              <Logo />
-              <Heading size="3xl">Easypace</Heading>
-            </Flex>
+            <Box height="48" backgroundColor="white">
+              <Wrapper>
+                <Flex
+                  alignItems="center"
+                  justifyContent="space-between"
+                  gap="4"
+                  height="48"
+                >
+                  <Flex gap="4">
+                    <Button variant="ghost">Über uns</Button>
+                    <Button variant="ghost">Our heros</Button>
+                  </Flex>
+
+                  <Logo />
+
+                  <Flex gap="4">
+                    <Button variant="ghost">Wetter</Button>
+                    <JoinLink />
+                  </Flex>
+                </Flex>
+              </Wrapper>
+            </Box>
           }
           body={
             <PageContainer extendableHeader={false}>

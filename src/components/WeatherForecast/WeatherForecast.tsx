@@ -2,7 +2,7 @@ import { Box } from "boemly";
 
 export const WeatherForecast = (): JSX.Element => {
   return (
-    <Box width="full" overflowX="scroll">
+    <Box max-width="full" overflowX="scroll">
       <Box width="md" height="md">
         <iframe
           scrolling="no"

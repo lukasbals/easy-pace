@@ -1,5 +1,6 @@
 import useClub from "@/hooks/useClub";
 import { Box, Flex, Heading, LabelNumberPair, Spacer, Text } from "boemly";
+import Login from "../Login";
 
 export const Club = (): JSX.Element => {
   const club = useClub();
@@ -7,27 +8,18 @@ export const Club = (): JSX.Element => {
   if (club) {
     return (
       <Box maxW="xl">
-        <Flex gap="8" alignItems="center" justifyContent="space-between">
-          <Heading size="3xl">{club.name}</Heading>
-          <Spacer height="6" />
-          <Flex gap="8">
-            <LabelNumberPair
-              label="Mitglieder"
-              number={(club.member_count - 1).toString()}
-            />
+        <Flex gap="6" flexDir="column" alignItems="start">
+          <LabelNumberPair
+            size="lg"
+            label="Mitglieder"
+            number={(club.member_count - 1).toString()}
+          />
 
-            <LabelNumberPair label="Liebe" number="viel" />
-          </Flex>
+          <LabelNumberPair size="lg" label="Liebe" number="viel" />
         </Flex>
-        <Spacer height="6" />
-        <Text>{club.description}</Text>
       </Box>
     );
   }
 
-  return (
-    <div>
-      Du bist nicht im Easypace club auf Strava! Tritt Easypace auf Strava bei!
-    </div>
-  );
+  return <Login />;
 };
