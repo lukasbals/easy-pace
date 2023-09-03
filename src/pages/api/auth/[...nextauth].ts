@@ -10,6 +10,7 @@ export const authOptions = {
     }),
     // ...add more providers here
   ],
+  maxAge: 3600, // 1 hour
   secret: process.env.SECRET,
   callbacks: {
     async jwt({ token, account }: any) {
