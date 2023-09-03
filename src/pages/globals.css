@@ -4,6 +4,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   cursor:url("/eli.png") 25 37, auto !important;
 }
@@ -32,4 +36,5 @@ a {
     background: var(--boemly-colors-pink-500);
     -webkit-box-shadow: 0 0 3px var(--boemly-colors-gray-500);
   }
+
 }
