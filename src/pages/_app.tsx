@@ -32,13 +32,23 @@ export default function MyApp({
                 >
                   <Flex gap="4">
                     <Button variant="ghost">Über uns</Button>
-                    <Button variant="ghost">Our heros</Button>
+                    <Button
+                      variant="ghost"
+                      display={["none", null, null, "unset"]}
+                    >
+                      Our heros
+                    </Button>
                   </Flex>
 
                   <Logo />
 
                   <Flex gap="4">
-                    <Button variant="ghost">Wetter</Button>
+                    <Button
+                      variant="ghost"
+                      display={["none", null, null, "unset"]}
+                    >
+                      Wetter
+                    </Button>
                     <JoinLink />
                   </Flex>
                 </Flex>

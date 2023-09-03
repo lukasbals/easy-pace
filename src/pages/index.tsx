@@ -15,7 +15,7 @@ const EasyPace = (): JSX.Element => {
     <>
       <Spacer height="48" />
 
-      <Box height="xl" position="relative">
+      <Box height={["3xs", null, null, "xl"]} position="relative">
         <Image
           src="/cover.jpeg"
           alt="Cover picture"
