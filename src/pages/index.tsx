@@ -87,13 +87,13 @@ const EasyPace = (): JSX.Element => {
       </Box>
 
       <Wrapper>
-        <Center width="full" height="3xs">
+        <Center width="full" height="28">
           <Leave />
         </Center>
       </Wrapper>
 
       <Wrapper>
-        <Center width="full" height="3xs">
+        <Center width="full" height="28">
           <Login />
         </Center>
       </Wrapper>

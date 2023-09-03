@@ -7,7 +7,7 @@ export const Leave = (): JSX.Element => {
 
   return (
     <>
-      <Flex flexDir="row" gap="2">
+      <Flex flexDir="column" alignItems="center" gap="4">
         <Button
           size="xs"
           colorScheme="red"
