@@ -1,5 +1,5 @@
 import useClub from "@/hooks/useClub";
-import { Box, Flex, Heading, LabelNumberPair, Spacer, Text } from "boemly";
+import { Box, Flex, LabelNumberPair } from "boemly";
 import Login from "../Login";
 
 export const Club = (): JSX.Element => {

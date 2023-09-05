@@ -66,6 +66,14 @@ export default function MyApp({
                         Our heros
                       </Button>
                     </Link>
+                    <Link href="#club-activities">
+                      <Button
+                        variant="ghost"
+                        display={["none", null, null, "unset"]}
+                      >
+                        Club activities
+                      </Button>
+                    </Link>
                   </Flex>
 
                   <Logo />

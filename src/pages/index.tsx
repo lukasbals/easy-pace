@@ -1,5 +1,6 @@
 import Athletes from "@/components/Athletes";
 import Club from "@/components/Club";
+import ClubActivitiesStats from "@/components/ClubActivitiesStats";
 import Leave from "@/components/Leave";
 import Login from "@/components/Login";
 import SayHello from "@/components/SayHello";
@@ -72,6 +73,14 @@ const EasyPace = (): JSX.Element => {
           ) : (
             <Athletes />
           )}
+          <Spacer height="20" />
+        </Wrapper>
+      </Box>
+
+      <Box id="club-activities">
+        <Wrapper>
+          <Spacer height="20" />
+          <ClubActivitiesStats />
           <Spacer height="20" />
         </Wrapper>
       </Box>
