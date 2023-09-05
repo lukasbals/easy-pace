@@ -77,7 +77,7 @@ const EasyPace = (): JSX.Element => {
         </Wrapper>
       </Box>
 
-      <Box id="club-activities">
+      <Box id="club-activities" backgroundColor="yellow.100">
         <Wrapper>
           <Spacer height="20" />
           <ClubActivitiesStats />

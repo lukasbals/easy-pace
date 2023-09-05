@@ -1,6 +1,6 @@
 import fetchClubActivities from "@/integrations/strava/fetchClubActivities";
 import ClubActivity from "@/models/ClubActivity";
-import { BoemlyList, Box, Heading, Spacer } from "boemly";
+import { BoemlyList, Box, Heading, Spacer, Text } from "boemly";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import Login from "../Login";
@@ -21,7 +21,7 @@ export const ClubActivitiesStats = (): JSX.Element => {
 
   return (
     <>
-      <Heading size="3xl">Letzte Aktivitäten</Heading>
+      <Heading size="4xl">Letzte Aktivitäten</Heading>
       <Spacer height="8" />
       {session ? (
         <Box overflowY="scroll" height="xs">
@@ -36,7 +36,14 @@ export const ClubActivitiesStats = (): JSX.Element => {
           />
         </Box>
       ) : (
-        <Login />
+        <>
+          <Text>
+            Du kannst unsere Aktivitäten nur sehen, wenn du mit Strava
+            eingeloggt bist. Also tu es! Dieses Mal wirklich! 🍑 🍆
+          </Text>
+          <Spacer height="4" />
+          <Login />
+        </>
       )}
     </>
   );
