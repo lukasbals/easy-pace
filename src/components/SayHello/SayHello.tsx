@@ -39,7 +39,7 @@ export const SayHello = (): JSX.Element => {
 
             setTimeout(() => {
               setIsWelcomeShown(false);
-            }, 1500);
+            }, 8000);
           }}
           css={css`
             animation-name: say-hello-button-animation;
@@ -71,7 +71,7 @@ export const SayHello = (): JSX.Element => {
       >
         <Box position="relative" width="full" height="full">
           <Image
-            src="/welcome-from-franzi.webp"
+            src="/welcome-from-franzi-silvester.jpeg"
             alt="Franzi welcoming our guests"
             fill
             style={{ objectFit: "contain", objectPosition: "center" }}
